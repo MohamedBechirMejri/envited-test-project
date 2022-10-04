@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen py-2 [font-family:Helvetica] flex-col-reverse gap-12 xl:gap-24 xl:flex-row ">
+    <div className="flex items-center justify-center min-h-screen py-2 [font-family:Helvetica] flex-col-reverse gap-12 xl:gap-24 xl:flex-row bg-purple-50">
       <div className="w-64 xl:w-[440px]">
         <Image src="/landing-page.svg" width={440} height={775.69} />
       </div>
