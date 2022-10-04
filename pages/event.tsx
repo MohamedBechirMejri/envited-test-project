@@ -20,12 +20,14 @@ const Event = ({ event, setEvent }: { event: any; setEvent: any }) => {
   };
 
   return (
-    <div className="flex items-center justify-start min-h-screen  [font-family:Helvetica] flex-col gap-2 max-w-[500px] mx-auto bg-[#fbfaff] text-[#240D57]">
-      <Image
-        src={event.picture || "/Birthday cake.png"}
-        width={375}
-        height={375}
-      />
+    <div className="flex items-center justify-start sm:justify-center min-h-screen  [font-family:Helvetica] flex-col gap-2 max-w-[700px] mx-auto bg-[#fbfaff] text-[#240D57] xl:flex-row-reverse xl:max-w-[1000px] xl:gap-48">
+      <div className="shrink-0">
+        <Image
+          src={event.picture || "/Birthday cake.png"}
+          width={375}
+          height={375}
+        />
+      </div>
       <div className="flex flex-col items-start w-full gap-2 px-8">
         <div className="flex flex-col items-start gap-1">
           <h1 className="flex flex-col items-center text-4xl font-bold">
