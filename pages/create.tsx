@@ -89,16 +89,14 @@ const Create = ({ event, setEvent }: { event: any; setEvent: any }) => {
         <label htmlFor="photo" className="font-semibold">
           Picture
         </label>
-        <div className="relative flex items-center justify-center w-full h-10 text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none cursor-pointer ring-purple-200 focus:bg-transparent focus:ring-2">
-          <input
-            type="file"
-            id="photo"
-            className="absolute top-0 left-0 w-full h-full opacity-0"
-            onChange={e => setPicture(e.target.value)}
-            value={picture}
-          />
-          <p>Select File</p>
-        </div>
+
+        <input
+          type="text"
+          id="photo"
+          className="relative flex items-center justify-center w-full h-10 text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2"
+          onChange={e => setPicture(e.target.value)}
+          value={picture}
+        />
       </div>
       <Link href="/event">
         <a className="w-[#320px] bg-gradient-to-r from-[#8456EC] to-[#E87BF8] text-white p-2 rounded px-12 font-semibold tracking-wide mt-4">
