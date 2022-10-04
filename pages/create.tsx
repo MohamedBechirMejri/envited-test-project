@@ -54,7 +54,7 @@ const Create = ({ event, setEvent }: { event: any; setEvent: any }) => {
           Start Date
         </label>
         <input
-          type="date"
+          type="datetime-local"
           id="start-date"
           className="h-10 font-semibold text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2 "
           onChange={e => setStartDate(e.target.value)}
@@ -66,7 +66,7 @@ const Create = ({ event, setEvent }: { event: any; setEvent: any }) => {
           End Date
         </label>
         <input
-          type="date"
+          type="datetime-local"
           id="end-date"
           className="h-10 font-semibold text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2"
           onChange={e => setEndDate(e.target.value)}
