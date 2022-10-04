@@ -1,11 +1,48 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 
-const Create: NextPage = () => {
+const Create = ({ event, setEvent }: { event: any; setEvent: any }) => {
+  const handleEventNameChange = (e: any) => {
+    const newEvent = event;
+    newEvent.name = e.target.value;
+    setEvent(newEvent);
+    console.log(event);
+  };
+  const handleHostNameChange = (e: any) => {
+    const newEvent = event;
+    newEvent.host = e.target.value;
+    setEvent(newEvent);
+    console.log(event);
+  };
+  const handleStartDateChange = (e: any) => {
+    const newEvent = event;
+    newEvent.startDate = e.target.value;
+    setEvent(newEvent);
+    console.log(event);
+  };
+  const handleEndDateChange = (e: any) => {
+    const newEvent = event;
+    newEvent.endDate = e.target.value;
+    setEvent(newEvent);
+    console.log(event);
+  };
+  const handleLocationChange = (e: any) => {
+    const newEvent = event;
+    newEvent.location = e.target.value;
+    setEvent(newEvent);
+    console.log(event);
+  };
+  const handlePictureChange = (e: any) => {
+    const newEvent = event;
+    newEvent.picture = e.target.value;
+    setEvent(newEvent);
+    console.log(event);
+  };
+
   return (
     <form className="flex items-center justify-center min-h-screen  [font-family:Helvetica] flex-col gap-4 text-[#240D57] selection:bg-purple-300 selection:text-white">
       <h1 className="mb-8 text-4xl font-bold">Add Event</h1>
-      <div className="flex flex-col gap-2 w-72">
+      <div className="flex flex-col gap-2 w-80">
         <label htmlFor="event" className="font-semibold">
           Event Name
         </label>
@@ -13,9 +50,10 @@ const Create: NextPage = () => {
           type="text"
           id="event"
           className="h-10 font-semibold text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2"
+          onChange={handleEventNameChange}
         />
       </div>
-      <div className="flex flex-col gap-2 w-72">
+      <div className="flex flex-col gap-2 w-80">
         <label htmlFor="host" className="font-semibold">
           Host Name
         </label>
@@ -23,9 +61,10 @@ const Create: NextPage = () => {
           type="text"
           id="host"
           className="h-10 font-semibold text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2"
+          onChange={handleHostNameChange}
         />
       </div>
-      <div className="flex flex-col gap-2 w-72">
+      <div className="flex flex-col gap-2 w-80">
         <label htmlFor="start-date" className="font-semibold">
           Start Date
         </label>
@@ -33,9 +72,10 @@ const Create: NextPage = () => {
           type="date"
           id="start-date"
           className="h-10 font-semibold text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2 "
+          onChange={handleStartDateChange}
         />
       </div>
-      <div className="flex flex-col gap-2 w-72">
+      <div className="flex flex-col gap-2 w-80">
         <label htmlFor="end-date" className="font-semibold">
           End Date
         </label>
@@ -43,9 +83,10 @@ const Create: NextPage = () => {
           type="date"
           id="end-date"
           className="h-10 font-semibold text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2"
+          onChange={handleEndDateChange}
         />
       </div>
-      <div className="flex flex-col gap-2 w-72">
+      <div className="flex flex-col gap-2 w-80">
         <label htmlFor="location" className="font-semibold">
           Location
         </label>
@@ -53,9 +94,10 @@ const Create: NextPage = () => {
           type="location"
           id="location"
           className="h-10 font-semibold text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2"
+          onChange={handleLocationChange}
         />
       </div>
-      <div className="flex flex-col gap-2 w-72">
+      <div className="flex flex-col gap-2 w-80">
         <label htmlFor="photo" className="font-semibold">
           Picture
         </label>
@@ -64,6 +106,7 @@ const Create: NextPage = () => {
             type="file"
             id="photo"
             className="absolute top-0 left-0 w-full h-full opacity-0"
+            onChange={handlePictureChange}
           />
           <p>Select File</p>
         </div>
