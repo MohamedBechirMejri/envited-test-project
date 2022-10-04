@@ -87,7 +87,7 @@ const Create = ({ event, setEvent }: { event: any; setEvent: any }) => {
       </div>
       <div className="flex flex-col gap-2 w-80">
         <label htmlFor="photo" className="font-semibold">
-          Picture
+          Picture (Optional)
         </label>
 
         <input
