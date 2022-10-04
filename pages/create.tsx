@@ -1,36 +1,26 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Create = ({ event, setEvent }: { event: any; setEvent: any }) => {
-  const handleEventNameChange = (e: any) => {
+  const [eventName, setEventName] = useState(event.name);
+  const [eventHost, setHostName] = useState(event.host);
+  const [startDate, setStartDate] = useState(event.startDate);
+  const [endDate, setEndDate] = useState(event.endDate);
+  const [location, setLocation] = useState(event.location);
+  const [picture, setPicture] = useState(event.picture);
+
+  useEffect(() => {
     const newEvent = event;
-    newEvent.name = e.target.value;
+
+    newEvent.name = eventName;
+    newEvent.host = eventHost;
+    newEvent.startDate = startDate;
+    newEvent.endDate = endDate;
+    newEvent.location = location;
+    newEvent.picture = picture;
+
     setEvent(newEvent);
-  };
-  const handleHostNameChange = (e: any) => {
-    const newEvent = event;
-    newEvent.host = e.target.value;
-    setEvent(newEvent);
-  };
-  const handleStartDateChange = (e: any) => {
-    const newEvent = event;
-    newEvent.startDate = e.target.value;
-    setEvent(newEvent);
-  };
-  const handleEndDateChange = (e: any) => {
-    const newEvent = event;
-    newEvent.endDate = e.target.value;
-    setEvent(newEvent);
-  };
-  const handleLocationChange = (e: any) => {
-    const newEvent = event;
-    newEvent.location = e.target.value;
-    setEvent(newEvent);
-  };
-  const handlePictureChange = (e: any) => {
-    const newEvent = event;
-    newEvent.picture = e.target.value;
-    setEvent(newEvent);
-  };
+  }, [eventName, eventHost, startDate, endDate, location, picture]);
 
   return (
     <form className="flex items-center justify-center min-h-screen  [font-family:Helvetica] flex-col gap-4 text-[#240D57] selection:bg-purple-300 selection:text-white">
@@ -43,8 +33,8 @@ const Create = ({ event, setEvent }: { event: any; setEvent: any }) => {
           type="text"
           id="event"
           className="h-10 font-semibold text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2"
-          onChange={handleEventNameChange}
-          value={event.name}
+          value={eventName}
+          onChange={e => setEventName(e.target.value)}
         />
       </div>
       <div className="flex flex-col gap-2 w-80">
@@ -55,8 +45,8 @@ const Create = ({ event, setEvent }: { event: any; setEvent: any }) => {
           type="text"
           id="host"
           className="h-10 font-semibold text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2"
-          onChange={handleHostNameChange}
-          value={event.host}
+          onChange={e => setHostName(e.target.value)}
+          value={eventHost}
         />
       </div>
       <div className="flex flex-col gap-2 w-80">
@@ -67,8 +57,8 @@ const Create = ({ event, setEvent }: { event: any; setEvent: any }) => {
           type="date"
           id="start-date"
           className="h-10 font-semibold text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2 "
-          onChange={handleStartDateChange}
-          value={event.startDate}
+          onChange={e => setStartDate(e.target.value)}
+          value={startDate}
         />
       </div>
       <div className="flex flex-col gap-2 w-80">
@@ -79,8 +69,8 @@ const Create = ({ event, setEvent }: { event: any; setEvent: any }) => {
           type="date"
           id="end-date"
           className="h-10 font-semibold text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2"
-          onChange={handleEndDateChange}
-          value={event.endDate}
+          onChange={e => setEndDate(e.target.value)}
+          value={endDate}
         />
       </div>
       <div className="flex flex-col gap-2 w-80">
@@ -91,8 +81,8 @@ const Create = ({ event, setEvent }: { event: any; setEvent: any }) => {
           type="location"
           id="location"
           className="h-10 font-semibold text-center text-purple-400 transition-all bg-purple-100 border rounded outline-none ring-purple-200 focus:bg-transparent focus:ring-2"
-          onChange={handleLocationChange}
-          value={event.location}
+          onChange={e => setLocation(e.target.value)}
+          value={location}
         />
       </div>
       <div className="flex flex-col gap-2 w-80">
@@ -104,8 +94,8 @@ const Create = ({ event, setEvent }: { event: any; setEvent: any }) => {
             type="file"
             id="photo"
             className="absolute top-0 left-0 w-full h-full opacity-0"
-            onChange={handlePictureChange}
-            value={event.picture}
+            onChange={e => setPicture(e.target.value)}
+            value={picture}
           />
           <p>Select File</p>
         </div>
